@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+node_modules
+
+# Operating System specific files
+.DS_Store
+
+# Vite build output
+/dist
+.vite
+
+# Python virtual environment
+.venv
+*_venv
+__pycache__
+
+# Coverage reports
+coverage
+
+# Build artifacts
+/dist-ssr
+
+# Cypress test output
+/cypress/videos/
+/cypress/screenshots/
+
+# Editor directories and files
+# Ignore VSCode settings
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Miscellaneous
+*.local

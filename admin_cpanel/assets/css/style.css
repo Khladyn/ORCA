@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+	font-family: 'Montserrat', sans-serif !important;
+	color: #000000 !important;
+	margin: 0;
+	padding: 0;
+	background-color: #eeeeee !important;
+}
+
+/* Navigation Bar */
+
+.navbar {
+	background-color: #252947 !important;
+	z-index: 1000 !important;
+}
+
+.orca-main-nav .nav-link {
+	font-size: 14px !important;
+	color: #FFFFFF !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.5px;
+	padding: 6px;
+}
+
+.orca-main-nav .nav-link.active, .orca-main-nav .nav-link.active:hover {
+	background-color: #F5BB00 !important;
+	color: #000000 !important;
+	border-radius: 20px;
+	font-weight: 700 !important;
+}
+
+.orca-main-nav .nav-link:hover {
+	color: #F5BB00 !important;
+}
+
+.orca-header {
+	background-color: #12131a;
+	color: #f5bb00;
+}
+
+/* Category Nav. Bar */
+
+.orca-category-nav .nav-link {
+	font-size: 14px !important;
+	color: #000000 !important;
+	font-weight: 600 !important;
+	padding: 10px;
+}
+
+.orca-category-nav .nav-link.active, .orca-category-nav .nav-link.active:hover {
+	background-color: #F5BB00 !important;
+	color: #000000 !important;
+	border-radius: 10px;
+	font-weight: 700 !important;
+}
+
+.orca-category-nav .nav-link:hover {
+	color: #F5BB00 !important;
+}
+
+/* Profile Header */
+
+.header-avatar {
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+}
+
+.header-avatar-inside {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+}
+
+.dropdown-menu {
+	width: 300px;
+	font-size: 11px;
+}
+
+.header-user .dropdown-menu:before {
+	right: 15px;
+	top: -16px;
+	border: 8px solid #0000;
+	border-bottom: 8px;
+}
+  
+.header-user .dropdown-menu:after {
+	right: 22px;
+	top: -14px;
+	border: 7px solid #0000;
+	border-bottom: 8px solid #FFFFFF;
+}
+	
+.header-user .dropdown-menu:before, .header-user .dropdown-menu:after {
+	content: "";
+	left: auto;
+	display: inline-block;
+	position: absolute;
+}
+
+.header-user .dropdown-menu {
+	border-radius: 20px !important;
+}
+
+.orca-dropdown-shortcuts {
+	width: 230px;
+}
+
+.orca-dropdown-shortcuts li a:hover, .tis-dropdown-shortcuts li a:focus {
+	background-color: #101010;
+	border-radius: 5px;
+	color: #f5bb00 !important;
+}
+
+.orca-dropdown-shortcuts li a {
+	font-size: 12px;
+}
+
+/* Dashboard */
+
+.orca-container-heading {
+	background-color: #181a2b;
+	color: #f5bb00;
+	padding: 12px;
+	border-radius: 10px 10px 0 0;
+}
+
+.orca-container-heading h6 {
+	font-size: 15px;
+	margin-bottom: 1px;
+	margin-left: 10px;
+}
+
+.orca-faq-list .list-group {
+    max-height: 400px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ChartJS */
+.chart-container-dashboard {
+	position: relative; 
+	height: 100%;
+}
+
+/* Buttons */
+.action-btn a, .action-btn button {
+	border-radius: 20px !important;
+}
+
+.table-action-btn a, .table-action-btn button {
+	border-radius: 10px !important;
+}
+
+.orca-btn-black {
+	background-color: #000000 !important;
+	color: #FFFFFF !important;	
+}
+
+.orca-btn-black:hover {
+	background-color: #202020 !important;
+}
+
+.orca-btn-red {
+	background-color: #880000 !important;
+	color: #FFFFFF !important;
+}
+
+.orca-btn-red:hover {
+	background-color: #a50000 !important;
+}
+
+.orca-btn-yellow {
+	background-color: #F5BB00 !important;
+	color: #000000 !important;
+}
+
+.orca-btn-yellow:hover {
+	background-color: #ffcd28 !important;
+}
+
+/* Form */
+.form-switch .form-check-input {
+	width: 4em !important;
+	height: 2em;
+	background-color: #d8d8d8;
+}
+
+.form-switch .form-check-input:focus {
+    border-color: rgba(0, 0, 0, 0.25);
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/></svg>");
+}
+
+.form-switch .form-check-input:checked {
+    border-color: #f5bb00;
+    border: none;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.9)'/></svg>");
+}
+
+input[type=checkbox]:focus, input[type=radio]:focus{
+	border: none;
+}
+
+input[type=checkbox]:checked, input[type=radio]:checked{
+    background-color: #f5bb00 !important;
+	border: none;
+}
+
+.field-req label:after {
+    color: #e32;
+    content: ' *';
+    display: inline;
+	font-weight: bold;
+}
+
+/* Modal */
+
+.modal-content {
+	border-radius: 20px !important;
+}
+
+.modal-open {
+	padding-right: 0 !important;
+	overflow-y: auto;
+}
+
+.modal-content .modal-header {
+	background-color: #252947;
+	color: #f5bb00;
+}
+
+.btn-close-white {
+    filter: invert(1);
+}
+
+.orca-modal-circle-symbol {
+	background-color: #252947;
+	color: #f5bb00;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	
+	width: 2em;
+	height: 2em;
+	margin: 0 auto 0;
+	font-size: 4em;
+}
+
+/* Table */
+
+.orca-table {
+	font-size: 14px;
+}
+
+.orca-table th {
+	background-color: #181a2b !important;
+	color: #f5bb00 !important;
+}
+
+table.dataTable thead > tr > th.sorting::before, table.dataTable thead > tr > th.sorting::after {
+	font-size: 1em !important;	
+	color: #ffe17d !important;
+}
+
+@media(max-width: 767px) {
+	.dataTables_filter {
+		margin-top: 15px;
+		float: right;
+	}
+	
+	.dataTables_length {
+		float: left;
+	}	
+	
+}
+
+/* Conversations */
+.orca-convos-list {
+	max-height: 530px;
+	overflow-y: auto;
+}
+
+.orca-convos-list .list-group-item.active {
+	background-color: #12131a;
+	border-left: 7px solid #a7acd3;
+	border-color: #8e93b6;
+}
+
+.orca-convos-list-avatar {
+	width: 35px;
+	height: 35px;
+	object-fit: cover;
+}
+
+.orca-convos-header {
+	background-color: #252947;
+	color: #ffffff;
+	border-radius: 15px 15px 0 0;
+}
+
+.orca-convos-sender-info {
+	background-color: transparent;
+	border: none;
+}
+
+.orca-convos-sender-info i {
+	color: #cecece;
+	font-size: inherit;
+}
+
+.orca-convos-sender-info i:hover {
+	color: #ffffff;
+	font-size: inherit;
+}
+
+.orca-convos-content {
+	min-height: 500px;
+	max-height: 500px;
+	overflow-y: auto;
+	background-color: #12131a;
+}
+
+.orca-offcanvas-header {
+	background-color: #252947;
+	color: #f5bb00;
+}
+
+.orca-offcanvas-avatar {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+}
+
+.convo-msg {
+	color: #ffffff;
+}
+
+.convo-msg h6 {
+	font-size: 13px;
+}
+
+.convo-msg small {
+	font-size: 11px;
+}
+
+.msg-sent-bg {
+	background-color: #252947;
+	border-radius: 10px;
+	color: #ffffff;
+}
+
+.msg-from-bg {
+	background-color: #252525;
+	border-radius: 10px;
+	color: #ffffff;
+}
+
+.msg-date {
+	font-size: 14px;
+	color: #ffffff;
+}
+
+/* Pagination */
+.page-item.active .page-link, .page-item.active:hover .page-link {
+	color: #000000 !important;
+	background: #f5bb00 !important;
+	border-color: #f5bb00 !important;
+}
+
+.page-item.disabled .page-link {
+	background-color: #404040 !important;
+	border-color: #404040 !important;
+}
+
+.pagination .page-link {
+	background-color: #181a2b;
+	border-color: #181a2b;
+    color: #FFFFFF;
+	font-weight: 600;
+}
+
+.pagination .page-link:hover, .pagination .page-link:focus {
+	background-color: #404040;
+    color: #f5bb00;
+   	border-color: #404040 !important;
+}
+
+/* Footer */
+.orca-footer-main {
+	background-color: #202129;
+	overflow: hidden;
+	width: 100%;
+	color: #FFFFFF;
+	padding: 20px;
+	font-size: 13px;
+}
+
+.orca-footer-main h5 {
+	font-size: 15px;
+}
+
+.orca-footer-under {
+	background-color: #12131a;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	color: #E8BF00;
+	padding: 4px;
+}
+
+.custom-toggler.navbar-toggler {
+    background-color: #12131a;
+	border-radius: 20px;
+}
+          
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+	"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 187, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border: 7px solid #0a0a0a;
+    box-shadow: inset 0 0 2.5px 2px rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E8BF00;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(255, 227, 100);
+    border-radius: 3px;
+}
+
+.orca-btn-up {
+	background-color: #f5bb00 !important;
+	color: #000000 !important;
+	z-index: 5;
+
+	position: fixed;
+	opacity: 0.9;
+
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+	
+	right: 40px;
+	bottom: 40px;
+}
+
+.orca-btn-up:hover {
+	background-color: #ffcd28 !important;
+}
+
+/* Others */
+.ql-editor {
+	font-family: 'Montserrat', sans-serif;
+	min-height: 100px;
+	max-height: 100px;
+	overflow-y: auto;
+}
+
+.ql-toolbar {
+	font-family: 'Montserrat', sans-serif !important;
+}
