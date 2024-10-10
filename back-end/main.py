@@ -13,6 +13,8 @@ CORS(app)  # Allow CORS for all domains
 translator = Translator()
 spell = SpellChecker()
 
+# Test updated main
+
 # Check if endpoints are working
 @app.route('/', methods=['GET'])
 def health_check():
