@@ -13,7 +13,7 @@ node_modules
 .DS_Store
 
 # Vite build output
-/dist
+dist
 .vite
 
 # Python virtual environment

@@ -722,10 +722,10 @@ console.log('Initial consent form visibility:', hasConsent.value);
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   
   <body>
-  <img src="../assets/or-bg.png" class="body-img" alt="Office of the Registrar Website">
+  <img src="../public/assets/or-bg.png" class="body-img" alt="Office of the Registrar Website">
 
   <button class="chatbotButton" @click="handleChatbotButtonClick" title="Contact Live Support">
-      <img src="../assets/orca.png" alt="Chatbot Logo" />
+      <img src="../public/assets/orca.png" alt="Chatbot Logo" />
     </button>
 
   <transition name="chatbox">
@@ -753,7 +753,7 @@ console.log('Initial consent form visibility:', hasConsent.value);
         </div>
 
         <div v-if=isBotTyping class="loading-container">
-          <img src="../assets/load1.gif" alt="loading..." class="typing-gif" />
+          <img src="../public/assets/load1.gif" alt="loading..." class="typing-gif" />
         </div>
       
         <div class="messageBox" ref="messageBox">
