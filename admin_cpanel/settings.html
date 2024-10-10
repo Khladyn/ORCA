@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <head>
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Chatbot Settings | ORCA Control Panel </title>
+
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/img/favicon-192x192.png" type="image/x-icon" sizes="192x192">
+        <link rel="apple-touch-icon-precomposed" href="assets/img/favicon-512x512.png" type="image/x-icon" sizes="512x512">
+        <link rel="manifest" href="assets/img/site.webmanifest">
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/use-bootstrap-tag.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>   
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.simple-checkbox-table.min.js"></script>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="assets/css/fluid-table.min.css">
+        
+        <link rel="stylesheet" href="assets/css/pace-theme-minimal.css">
+    </head>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm orca-main-nav">
+        <div class="container">
+            <button class="navbar-toggler custom-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo/orca_cp.png" width="250" title="ORCA"></a>
+
+            <!-- User Dropdown -->
+            <div class="header-user dropdown order-lg-1 me-1">
+                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <img src="assets/img/defaults/default_avatar.jpg" class="header-avatar rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end text-small shadow">
+                    <div class="container">
+                        <!-- User Profile Info -->
+                        <div class="justify-content-center text-center my-2 mb-3">
+                            <img src="assets/img/defaults/default_avatar.jpg" class="header-avatar-inside rounded-circle shadow mb-3">
+                            <h6 class="current-name fw-bold"> JEREMIAH D. </h6>
+                        </div>
+                        <!-- Logout Button -->
+                        <a class="btn btn-sm orca-btn-red fw-bold w-100 rounded-pill mt-1 mb-2" href="index.html" type="button"> <i class="fas fa-sign-out-alt"></i> Logout </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <!-- Navigation Items -->
+                <ul class="navbar-nav me-auto mx-auto flex-row flex-wrap text-center my-2">
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="index.html"><i class="fas fa-tachometer-alt fa-lg fa-fw"></i> DASHBOARD</a>
+                    </li>
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="q&a.html"><i class="fas fa-comment-edit fa-lg fa-fw"></i> Q&A LIST</a>
+                    </li>
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="convos.html"><i class="fas fa-comments fa-lg fa-fw"></i> CONVERSATIONS</a>
+                    </li>
+                    <!--
+                    <li class="nav-item col-12 col-sm-6 col-lg-auto">
+                        <a class="nav-link" aria-current="page" href="settings.html"><i class="fas fa-cog fa-lg fa-fw"></i> CHATBOT SETTINGS</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body>
+
+        <div class="container-fluid px-lg-5 p-3 min-vh-100">
+
+        </div>
+
+        <button class="btn btn-lg orca-btn-up rounded-pill fs-1 shadow-lg" id="back-to-top" type="button" title="Back To Top" style="display: none;">
+            <i class="fas fa-arrow-alt-up"></i>
+        </button>
+
+        <!-- Start of Footer -->
+        <footer class="orca-footer-main mt-auto">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12" style="margin-top: 40px;">
+                        <a href="https://www.ust.edu.ph" target="_blank"><img class="img-fluid mx-auto d-block mb-3" src="assets/img/logo/ust_footer.png" alt="University of Santo Tomas" title="University of Santo Tomas" width="300"></a>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12" style="margin-top: 40px;">
+                        <a href="https://registrar.ust.edu.ph" target="_blank"><img class="img-fluid mx-auto d-block mb-4" src="assets/img/logo/registrar logo 3.png" alt="UST Office of the Registrar" title="UST Office of the Registrar" width="350"></a>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 col-12" style="margin-top: 10px;">
+                        <a href="#" target="_blank"><img class="img-fluid mx-auto d-block mb-4" src="assets/img/logo/tide_logo_clear.png" alt="TIDE" title="TIDE" width="120"></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-12" style="border-left: 1px solid #505050;">
+                        <h5 class="text-warning fw-bold" style="font-size: 13px;">ABOUT ORCA</h5>
+                        <p> During the final stages of development of <a class="link-warning text-decoration-none" href="https://registrar.ust.edu.ph/beyondthearch/verifier/login" target="_blank">Beyond The Arch</a>, ORCA (Office of the Registrar Chatbot Assistant) was initially conceived as a course project by the members of TIDE during their last semester in the university. Months after their graduation, the members set out to complete this project as their gift to the Office of the Registrar. </p>
+                        <p> Made during their unemployed era <i> with love. </i></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <footer class="orca-footer-under">
+            <small class="d-block">&copy; 2024 Developed for UST Office of the Registrar. Powered by <b>TIDE</b>. </small>
+        </footer>
+        <!-- End of Footer -->
+
+        <script type="text/javascript" src="assets/js/custom.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-3.6.0.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        
+    </body>
+</html>

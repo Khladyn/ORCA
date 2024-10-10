@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+    <head>
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Q&A List | ORCA Control Panel </title>
+
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/img/favicon-192x192.png" type="image/x-icon" sizes="192x192">
+        <link rel="apple-touch-icon-precomposed" href="assets/img/favicon-512x512.png" type="image/x-icon" sizes="512x512">
+        <link rel="manifest" href="assets/img/site.webmanifest">
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/use-bootstrap-tag.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>   
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.simple-checkbox-table.min.js"></script>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="assets/css/fluid-table.min.css">
+        
+        <link rel="stylesheet" href="assets/css/pace-theme-minimal.css">
+    </head>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm orca-main-nav">
+        <div class="container">
+            <button class="navbar-toggler custom-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo/orca_cp.png" width="250" title="ORCA"></a>
+
+            <!-- User Dropdown -->
+            <div class="header-user dropdown order-lg-1 me-1">
+                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <img src="assets/img/defaults/default_avatar.jpg" class="header-avatar rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end text-small shadow">
+                    <div class="container">
+                        <!-- User Profile Info -->
+                        <div class="justify-content-center text-center my-2 mb-3">
+                            <img src="assets/img/defaults/default_avatar.jpg" class="header-avatar-inside rounded-circle shadow mb-3">
+                            <h6 class="current-name fw-bold"> JEREMIAH D. </h6>
+                        </div>
+                        <!-- Logout Button -->
+                        <a class="btn btn-sm orca-btn-red fw-bold w-100 rounded-pill mt-1 mb-2" href="index.html" type="button"> <i class="fas fa-sign-out-alt"></i> Logout </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <!-- Navigation Items -->
+                <ul class="navbar-nav me-auto mx-auto flex-row flex-wrap text-center my-2">
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="index.html"><i class="fas fa-tachometer-alt fa-lg fa-fw"></i> DASHBOARD</a>
+                    </li>
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="q&a.html"><i class="fas fa-comment-edit fa-lg fa-fw"></i> Q&A LIST</a>
+                    </li>
+                    <li class="nav-item col-12 col-md-12 col-lg-auto me-1">
+                        <a class="nav-link" aria-current="page" href="convos.html"><i class="fas fa-comments fa-lg fa-fw"></i> CONVERSATIONS</a>
+                    </li>
+                    <!--
+                    <li class="nav-item col-12 col-sm-6 col-lg-auto">
+                        <a class="nav-link" aria-current="page" href="settings.html"><i class="fas fa-cog fa-lg fa-fw"></i> CHATBOT SETTINGS</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body>
+
+        <div class="container-fluid px-lg-5 p-3 min-vh-100">
+
+            <div class="row my-3">
+                <div class="col-xl-2 col-md-12">
+                    <div class="position-sticky" style="top: 7rem;">
+                        <div class="bg-body-tertiary rounded-4 shadow-sm">
+                            <div class="orca-container-heading">
+                                <h6 class="fw-bold"><i class="fas fa-folders"></i>&nbsp; Categories</h6>
+                            </div>
+                            <div class="p-3">
+                                <!-- Category Menu -->
+                                <nav class="nav orca-category-nav flex-column">
+                                    <a class="nav-link active" aria-current="page" href="#">General <span class="badge text-bg-dark rounded-pill mx-1 float-end">80</span></a>
+                                    <a class="nav-link" href="#">Enrollment <span class="badge text-bg-dark rounded-pill mx-1 float-end">17</span></a>
+                                    <a class="nav-link" href="#">Petition Class <span class="badge text-bg-dark rounded-pill mx-1 float-end">10</span></a>
+                                    <a class="nav-link" href="#">Add/Drop Class <span class="badge text-bg-dark rounded-pill mx-1 float-end">9</span></a>
+                                    <a class="nav-link" href="#">Graduation <span class="badge text-bg-dark rounded-pill mx-1 float-end">8</span></a>
+                                    <a class="nav-link" href="#">Document Releasing <span class="badge text-bg-dark rounded-pill mx-1 float-end">3</span></a>
+                                    <a class="nav-link" href="#">Alumni Verification <span class="badge text-bg-dark rounded-pill mx-1 float-end">23</span></a>
+                                    <a class="nav-link" href="#">OSRA <span class="badge text-bg-dark rounded-pill mx-1 float-end">31</span></a>
+                                    <a class="nav-link" href="#">Miscellaneous <span class="badge text-bg-dark rounded-pill mx-1 float-end">6</span></a>
+                                </nav>
+
+                                <!-- Action Buttons -->
+                                <div class="action-btn my-3">
+                                    <button class="btn btn-sm orca-btn-black fw-bold px-3" type="button" data-bs-toggle="modal" data-bs-target="#qnaCatAdd"><i class="fas fa-plus"></i> Add </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category Settings -->
+                        <div class="bg-body-tertiary rounded-4 shadow-sm my-3">
+                            <div class="orca-container-heading">
+                                <h6 class="fw-bold"><i class="fas fa-folder"></i>&nbsp; Category: General Settings </h6>
+                            </div>
+                            <!-- Action Buttons -->
+                            <div class="p-3">
+                                <div class="action-btn my-3">
+                                    <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#qnaCatEdit"><i class="fas fa-edit"></i> Edit </button>
+                                    <button class="btn btn-sm orca-btn-red fw-bold px-3 mb-2" type="button" data-bs-toggle="modal" data-bs-target="#qnaCatDel"><i class="fas fa-trash"></i> Delete </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-10 col-md-12">
+
+                    <!-- Table Proper -->
+                    <div class="bg-body-tertiary rounded-4 shadow-sm">
+
+                        <div class="orca-container-heading">
+                            <h6 class="fw-bold"><i class="fas fa-comment-lines"></i>&nbsp; Q&A Templates for: General</h6>
+                        </div>
+
+                        <div class="px-lg-5 p-3 pb-5">
+                            <!-- Action Buttons -->
+                            <div class="action-btn my-3 mb-4">
+                                <button class="btn btn-sm orca-btn-black fw-bold px-3 me-1" type="button" data-bs-toggle="modal" data-bs-target="#qnaCreate"><i class="fas fa-plus"></i> Create </button>
+                                <button class="btn btn-sm orca-btn-red fw-bold px-3" type="button" data-bs-toggle="modal" data-bs-target="#qnaBulkDel"><i class="fas fa-trash"></i> Bulk Delete </button>
+                            </div>
+
+                            <table class="table orca-table table-responsive table-striped text-break fluid-table my-3" id="orca-qna-table">
+                                <thead>
+                                    <tr class="text-nowrap">
+                                        <th><input class="form-check-input" type="checkbox" value="" name="" id=""></th>
+                                        <th>#</th>
+                                        <th width="30%">Question</th>
+                                        <th width="30%">Answer</th>
+                                        <th>Tags</th>
+                                        <th>Last Updated</th>
+                                        <th class="text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">1</td>
+                                        <td data-label="Question">"How do I register for classes"</td>
+                                        <td data-label="Answer">"You can register for classes through our online portal or by visiting the registrar's office."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">June 28, 2024, 4:03am</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">2</td>
+                                        <td data-label="Question">"When is the deadline to drop a course"</td>
+                                        <td data-label="Answer">"The deadline to drop a course varies depending on the semester. You can find the exact deadline on our academic calendar."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">August 31, 2024, 2:21pm</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">3</td>
+                                        <td data-label="Question">"what is the process for changing my major"</td>
+                                        <td data-label="Answer">"To change your major, you need to fill out a Change of Major form and meet with an academic advisor to discuss the requirements."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">August 31, 2024, 3:20pm</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">4</td>
+                                        <td data-label="Question">"how do I request a transcript"</td>
+                                        <td data-label="Answer">"You can request a transcript online through our student portal or by submitting a Transcript Request Form to the registrar's office."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 16, 2024, 12:11pm</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">5</td>
+                                        <td data-label="Question">"where can I find information about graduation requirements"</td>
+                                        <td data-label="Answer">"You can find information about graduation requirements in the university catalog or by speaking with an academic advisor."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 18, 2024, 12:13am</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">6</td>
+                                        <td data-label="Question">"what is the procedure for withdrawing from the university"</td>
+                                        <td data-label="Answer">"To withdraw from the university, you need to fill out a Withdrawal Form and meet with a counselor to discuss the process and any implications."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 18, 2024, 1:13am</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">7</td>
+                                        <td data-label="Question">"how do I apply for graduation"</td>
+                                        <td data-label="Answer">"You can apply for graduation through our online portal or by submitting a Graduation Application to the registrar's office."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 18, 2024, 2:13am</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">8</td>
+                                        <td data-label="Question">"what is the process for requesting an official document"</td>
+                                        <td data-label="Answer">"To request an official document, such as a letter of enrollment or degree verification, you need to submit a Request for Official Document form to the registrar's office."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 18, 2024, 3:13am</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">9</td>
+                                        <td data-label="Question">"where can I find information about tuition and fees"</td>
+                                        <td data-label="Answer">"You can find information about tuition and fees on our website or by contacting the Bursar's office."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 18, 2024, 4:13am</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">10</td>
+                                        <td data-label="Question">"how do I update my personal information"</td>
+                                        <td data-label="Answer">"You can update your personal information, such as your address or phone number, through the student portal or by submitting a Change of Personal Information form to the registrar's office."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 18, 2024, 5:13am</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">11</td>
+                                        <td data-label="Question">"how do I sign up for petition class"</td>
+                                        <td data-label="Answer">"You can sign up for petition class by going to sPARC in myUSTE."</td>
+                                        <td data-label="Tags">tag1, tag2, tag3</td>
+                                        <td data-label="Last Updated">September 18, 2024, 7:04pm</td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Edit" data-bs-toggle="modal" data-bs-target="#qnaEdit"><i class="fas fa-edit fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Archive" data-bs-toggle="modal" data-bs-target="#qnaDel"><i class="fas fa-trash fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn btn-lg orca-btn-up rounded-pill fs-1 shadow-lg" id="back-to-top" type="button" title="Back To Top" style="display: none;">
+            <i class="fas fa-arrow-alt-up"></i>
+        </button>
+
+        <!-- Start of Footer -->
+        <footer class="orca-footer-main mt-auto">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12" style="margin-top: 40px;">
+                        <a href="https://www.ust.edu.ph" target="_blank"><img class="img-fluid mx-auto d-block mb-3" src="assets/img/logo/ust_footer.png" alt="University of Santo Tomas" title="University of Santo Tomas" width="300"></a>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12" style="margin-top: 40px;">
+                        <a href="https://registrar.ust.edu.ph" target="_blank"><img class="img-fluid mx-auto d-block mb-4" src="assets/img/logo/registrar logo 3.png" alt="UST Office of the Registrar" title="UST Office of the Registrar" width="350"></a>
+                    </div>
+                    <div class="col-xl-2 col-lg-6 col-md-6 col-12" style="margin-top: 10px;">
+                        <a href="#" target="_blank"><img class="img-fluid mx-auto d-block mb-4" src="assets/img/logo/tide_logo_clear.png" alt="TIDE" title="TIDE" width="120"></a>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-12" style="border-left: 1px solid #505050;">
+                        <h5 class="text-warning fw-bold" style="font-size: 13px;">ABOUT ORCA</h5>
+                        <p> During the final stages of development of <a class="link-warning text-decoration-none" href="https://registrar.ust.edu.ph/beyondthearch/verifier/login" target="_blank">Beyond The Arch</a>, ORCA (Office of the Registrar Chatbot Assistant) was initially conceived as a course project by the members of TIDE during their last semester in the university. Months after their graduation, the members set out to complete this project as their gift to the Office of the Registrar. </p>
+                        <p> Made during their unemployed era <i> with love. </i></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <footer class="orca-footer-under">
+            <small class="d-block">&copy; 2024 Developed for UST Office of the Registrar. Powered by <b>TIDE</b>. </small>
+        </footer>
+        <!-- End of Footer -->
+
+        <!-- Modals -->
+
+        <!-- MODAL: Add Category -->
+        <div class="modal fade" id="qnaCatAdd" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel"><i class="fas fa-comment-edit fa-fw"></i> Add Category</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="#" method="POST">
+                            <div class="my-2 field-req">
+                                <label> Category Name: </label>
+                                <input type="text" name="#" id="#" class="form-control rounded" placeholder="Enter category name here" required>
+                            </div>
+
+                    </div>
+                        <div class="modal-footer action-btn">
+                            <button type="submit" class="btn btn-sm orca-btn-yellow fw-bold px-3"><i class="fas fa-save"></i> Save</button>
+                            <button type="button" class="btn btn-sm orca-btn-red fw-bold px-3" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: Edit Category -->
+        <div class="modal fade" id="qnaCatEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel"><i class="fas fa-comment-edit fa-fw"></i> Edit Category</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="#" method="POST">
+                            <div class="my-2 field-req">
+                                <label> Category Name: </label>
+                                <input type="text" name="#" id="#" class="form-control rounded" placeholder="Enter category name here" value="General" required>
+                            </div>
+
+                    </div>
+                        <div class="modal-footer action-btn">
+                            <button type="submit" class="btn btn-sm orca-btn-yellow fw-bold px-3"><i class="fas fa-save"></i> Save</button>
+                            <button type="button" class="btn btn-sm orca-btn-red fw-bold px-3" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: Delete Category -->
+        <div class="modal fade" id="qnaCatDel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-4">
+                        <div class="orca-modal-circle-symbol mt-2">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="orca-notice text-center mt-3">
+                            <h3 class="fw-bold">Confirm Deletion</h3>
+                            <p class="orca-notice-desc my-4">Are you sure you want to delete this category? All Q&A Templates under this category will be classified as <b>Uncategorized</b>. This action cannot be undone.</p>
+
+                            <div class="d-flex justify-content-center action-btn py-3">
+                                <button class="btn orca-btn-yellow fw-bold px-3 mx-1" type="submit">OK</button>
+                                <button class="btn orca-btn-red fw-bold px-3 mx-1" type="submit" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: Create Q&A Entry -->
+        <div class="modal fade" id="qnaCreate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel"><i class="fas fa-comment-edit fa-fw"></i> Create Q&A Entry</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="#" method="POST">
+                            <div class="my-2 field-req">
+                                <label> Category: </label>
+                                <select class="form-select rounded" name="#" id="#" required>
+                                    <option value="">Select Category</option>
+                                    <option value="General" selected>General</option>
+                                    <option value="Enrollment">Enrollment</option>
+                                    <option value="Petition Class">Petition Class</option>
+                                    <option value="Add/Drop Class">Add/Drop Class</option>
+                                    <option value="Graduation">Graduation</option>
+                                    <option value="Document Releasing">Document Releasing</option>
+                                    <option value="Alumni Verification">Alumni Verification</option>
+                                    <option value="OSRA">OSRA</option>
+                                    <option value="Miscellaneous">Miscellaneous</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="my-2 field-req">
+                                        <label> Question: </label>
+                                        <div id="question_field_create"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="my-2 field-req">
+                                        <label> Answer: </label>
+                                        <div id="answer_field_create"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="my-2 field-req">
+                                <label> Tags: </label>
+                                <input type="text" name="#" id="qna_tags_create" class="form-control rounded" data-ub-tag-enter data-ub-tag-variant="warning" placeholder="Type your tag here and press ENTER" required>
+                            </div>
+                    </div>
+                        <div class="modal-footer action-btn">
+                            <button type="submit" class="btn btn-sm orca-btn-yellow fw-bold px-3"><i class="fas fa-save"></i> Save</button>
+                            <button type="button" class="btn btn-sm orca-btn-red fw-bold px-3" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: Edit Q&A Entry -->
+        <div class="modal fade" id="qnaEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel"><i class="fas fa-comment-edit fa-fw"></i> Edit Q&A Entry</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="#" method="POST">
+                            <div class="my-2 field-req">
+                                <label> Category: </label>
+                                <select class="form-select rounded" name="#" id="#" required>
+                                    <option value="">Select Category</option>
+                                    <option value="General" selected>General</option>
+                                    <option value="Enrollment">Enrollment</option>
+                                    <option value="Petition Class">Petition Class</option>
+                                    <option value="Add/Drop Class">Add/Drop Class</option>
+                                    <option value="Graduation">Graduation</option>
+                                    <option value="Document Releasing">Document Releasing</option>
+                                    <option value="Alumni Verification">Alumni Verification</option>
+                                    <option value="OSRA">OSRA</option>
+                                    <option value="Miscellaneous">Miscellaneous</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="my-2 field-req">
+                                        <label> Question: </label>
+                                        <div id="question_field_edit">
+                                            <p>how do I update my personal information</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="my-2 field-req">
+                                        <label> Answer: </label>
+                                        <div id="answer_field_edit">
+                                            <p>You can update your personal information, such as your address or phone number, through the <strong>student portal</strong> or by <strong>submitting a Change of Personal Information form</strong> to the registrar's office.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="my-2 field-req">
+                                <label> Tags: </label>
+                                <input type="text" name="#" id="qna_tags_edit" class="form-control rounded" data-ub-tag-enter data-ub-tag-variant="warning" placeholder="Type your tag here and press ENTER" value="tag1, tag2, tag3" required>
+                            </div>
+                    </div>
+                        <div class="modal-footer action-btn">
+                            <button type="submit" class="btn btn-sm orca-btn-yellow fw-bold px-3"><i class="fas fa-save"></i> Save</button>
+                            <button type="button" class="btn btn-sm orca-btn-red fw-bold px-3" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: Delete Q&A Entry -->
+        <div class="modal fade" id="qnaDel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-4">
+                        <div class="orca-modal-circle-symbol mt-2">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="orca-notice text-center mt-3">
+                            <h3 class="fw-bold">Confirm Deletion</h3>
+                            <p class="orca-notice-desc my-4">Are you sure you want to delete this Q&A Entry? This action cannot be undone.</p>
+
+                            <div class="d-flex justify-content-center action-btn py-3">
+                                <button class="btn orca-btn-yellow fw-bold px-3 mx-1" type="submit">OK</button>
+                                <button class="btn orca-btn-red fw-bold px-3 mx-1" type="submit" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: Bulk Delete Q&A Entry -->
+        <div class="modal fade" id="qnaBulkDel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-4">
+                        <div class="orca-modal-circle-symbol mt-2">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="orca-notice text-center mt-3">
+                            <h3 class="fw-bold">Confirm Bulk Deletion</h3>
+                            <p class="orca-notice-desc my-4">Are you sure you want to delete <strong>1000</strong> Q&A Entries? This action cannot be undone.</p>
+
+                            <div class="d-flex justify-content-center action-btn py-3">
+                                <button class="btn orca-btn-yellow fw-bold px-3 mx-1" type="submit">OK</button>
+                                <button class="btn orca-btn-red fw-bold px-3 mx-1" type="submit" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Modals -->
+
+        <script>
+            $('#orca-qna-table').DataTable( {
+                 'columns': [
+                     { data: 'checkbox' }, /* index - 0 */
+                     { data: 'number' }, /* index - 1 */
+                     { data: 'question' }, /* index - 2 */
+                     { data: 'answer' }, /* index - 3 */
+                     { data: 'tags' }, /* index - 4 */
+                     { data: 'last_updated' }, /* index - 5 */
+                     { data: 'action' } /* index - 6 */
+                 ],
+                 columnDefs: [
+                     { orderable: false, targets: [0,6] }
+                 ],
+                 order: [[1, 'desc']],
+                 language: {
+                     paginate: {
+                         first:    '«',
+                         previous: '‹',
+                         next:     '›',
+                         last:     '»'
+                     },
+                     aria: {
+                         paginate: {
+                             first:    'First',
+                             previous: 'Previous',
+                             next:     'Next',
+                             last:     'Last'
+                         }
+                     }
+                 }
+             });
+ 
+             $(document).ready(function(){
+                 $("#orca-qna-table").simpleCheckboxTable();
+             });
+ 
+             $("#orca-qna-table").simpleCheckboxTable({
+                 onCheckedStateChanged: function($checkbox) {
+                     // Do something when checkbox state is changed.
+                 }
+             });
+         </script>
+
+        <script>
+            $(document).ready(function() {
+                const quill = new Quill('#question_field_create', {
+                    theme: 'snow'
+                });
+
+                const quill2 = new Quill('#answer_field_create', {
+                    theme: 'snow'
+                });
+
+                const quill3 = new Quill('#question_field_edit', {
+                    theme: 'snow'
+                });
+
+                const quill4 = new Quill('#answer_field_edit', {
+                    theme: 'snow'
+                });
+            });
+        </script>
+
+        <script type="text/javascript" src="assets/js/jquery-3.6.0.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+        <script type="text/javascript" src="assets/js/use-bootstrap-tag.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/js/custom.js"></script>
+
+    </body>
+</html>
