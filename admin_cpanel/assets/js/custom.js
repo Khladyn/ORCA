@@ -13,6 +13,10 @@ window.onscroll = function () {
     scrollFunction();
 };
 
+/* Conversation */
+const convos_content = document.querySelector('.orca-convos-content'); 
+convos_content.scrollTop = convos_content.scrollHeight; 
+
 function scrollFunction() {
     if (
         document.body.scrollTop > 20 ||
