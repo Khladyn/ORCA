@@ -13,6 +13,13 @@ window.onscroll = function () {
     scrollFunction();
 };
 
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 /* Conversation */
 const convos_content = document.querySelector('.orca-convos-content'); 
 convos_content.scrollTop = convos_content.scrollHeight; 
@@ -28,12 +35,6 @@ function scrollFunction() {
     }
 }
 
-mybutton.addEventListener("click", backToTop);
-
-function backToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
+/* Bootstrap Tag */
 const qna_tags_create = UseBootstrapTag(document.getElementById('qna_tags_create'));
 const qna_tags_edit = UseBootstrapTag(document.getElementById('qna_tags_edit'));
