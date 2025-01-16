@@ -281,14 +281,13 @@ table.dataTable thead > tr > th.sorting::before, table.dataTable thead > tr > th
 
 /* Conversations */
 .orca-convos-list {
-	min-height: 900px;
 	max-height: 900px;
 	overflow-y: auto;
 }
 
 @media (max-width: 767px) {
 	.orca-convos-list {
-		max-height: 200px;
+		max-height: 250px;
 	}
 }
 
