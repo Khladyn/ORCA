@@ -206,20 +206,29 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-9 col-md-12">
+                        <div class="col-xl-9 col-md-12 mt-lg-2 mt-4">
                             <div class="orca-convos-main">
                                 <div class="orca-convos-header d-flex justify-content-between align-items-start p-3">
                                     <!-- Person Details -->
                                     <img src="assets/img/defaults/default_avatar.jpg" class="rounded-circle" width="35">
                                     <div class="ms-3 me-auto">
                                         <h6 class="fw-bold mb-0">Jericho Rosales <button class="orca-convos-sender-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#orca-convos-sender-expanded" aria-controls="staticBackdrop"><i class="fas fa-info-circle"></i></button></h6> 
-                                        <small class="opacity-50">Last message on: September 19, 2024, 4:10pm</small>
+                                        <div class="d-flex flex-wrap align-items-center mb-2">
+                                            <small class="opacity-75 me-2">Last message on:</small> 
+                                            <small class="opacity-75">September 19, 2024, 4:10pm</small>
+                                        </div>
+                                        <!-- Buttons: Mobile -->
+                                        <div class="action-btn d-block d-sm-none"> 
+                                            <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-envelope"></i>&nbsp;<span class="d-none d-sm-inline"> Send E-mail </span></button>
+                                            <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-phone-alt"></i>&nbsp;<span class="d-none d-sm-inline"> Call </span></button>
+                                            <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-download"></i>&nbsp;<span class="d-none d-sm-inline"> Export to .txt </span></button>
+                                        </div>                                  
                                     </div>
-                                    <!-- Buttons -->
-                                    <div class="action-btn">
-                                        <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-envelope"></i> <span class="d-none d-sm-inline"> Send E-mail </span></button>
-                                        <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-phone-alt"></i> <span class="d-none d-sm-inline"> Call </span></button>
-                                        <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-download"></i> <span class="d-none d-sm-inline"> Export to .txt </span></button>
+                                    <!-- Buttons: Desktop -->
+                                    <div class="action-btn d-none d-sm-block"> 
+                                        <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-envelope"></i>&nbsp;<span class="d-none d-sm-inline"> Send E-mail </span></button>
+                                        <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-phone-alt"></i>&nbsp;<span class="d-none d-sm-inline"> Call </span></button>
+                                        <button class="btn btn-sm orca-btn-yellow fw-bold px-3 mb-2" type="button"><i class="fas fa-download"></i>&nbsp;<span class="d-none d-sm-inline"> Export to .txt </span></button>
                                     </div>
                                 </div>
                                 <div class="orca-convos-content p-2">
