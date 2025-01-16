@@ -281,8 +281,15 @@ table.dataTable thead > tr > th.sorting::before, table.dataTable thead > tr > th
 
 /* Conversations */
 .orca-convos-list {
-	max-height: 530px;
+	min-height: 900px;
+	max-height: 900px;
 	overflow-y: auto;
+}
+
+@media (max-width: 767px) {
+	.orca-convos-list {
+		max-height: 200px;
+	}
 }
 
 .orca-convos-list .list-group-item.active {
@@ -319,10 +326,10 @@ table.dataTable thead > tr > th.sorting::before, table.dataTable thead > tr > th
 }
 
 .orca-convos-content {
-	min-height: 500px;
-	max-height: 500px;
+	min-height: 900px;
+	max-height: 900px;
 	overflow-y: auto;
-	background-color: #12131a;
+	background-color: #101010;
 }
 
 .orca-offcanvas-header {
@@ -349,7 +356,7 @@ table.dataTable thead > tr > th.sorting::before, table.dataTable thead > tr > th
 }
 
 .msg-sent-bg {
-	background-color: #252947;
+	background-color: #181a29;
 	border-radius: 10px;
 	color: #ffffff;
 }
