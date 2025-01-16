@@ -1,39 +1,59 @@
 .loader {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
 
-	background-color: #181a2b;
-	transition: opacity 0.75s, visibility 1.75s;
-	z-index: 998;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #181a2b; 
+    transition: opacity 0.75s ease-in-out, visibility 1.75s ease-in-out;
+    z-index: 999;
 }
-  
+
 .loader--hidden {
     opacity: 0;
     visibility: hidden;
 }
 
+  
 .loader::after {
-    position: absolute;
     content: "";
+    display: block;
     
+    width: 300px;
+    height: 300px;
+
     border-radius: 50%;
-    border-top: 10px solid #f5bb00;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid transparent;
-    
-    width: 100px;
-    height: 100px;
-    animation: spin 0.75s ease;
+    border: 15px solid #202020; 
+    border-top-color: #f5bb00; 
+
+    animation: spin 0.75s ease; 
+    position: relative; 
 }
 
+.loader::before { 
+    content: "";
+    display: block;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
+    width: 150px;
+    height: 150px;
+    background-image: url('../img/logo/orca_variant3.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+  
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
+}
+  
