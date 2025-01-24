@@ -19,22 +19,3 @@ function backToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
-
-/* Conversation */
-const convos_content = document.querySelector('.orca-convos-content'); 
-convos_content.scrollTop = convos_content.scrollHeight; 
-
-function scrollFunction() {
-    if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-    ) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-}
-
-/* Bootstrap Tag */
-const qna_tags_create = UseBootstrapTag(document.getElementById('qna_tags_create'));
-const qna_tags_edit = UseBootstrapTag(document.getElementById('qna_tags_edit'));

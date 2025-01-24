@@ -499,6 +499,23 @@
             </div>
         </div>
 
+        <script>
+            /* Conversation */
+            const convos_content = document.querySelector('.orca-convos-content'); 
+            convos_content.scrollTop = convos_content.scrollHeight; 
+
+            function scrollFunction() {
+                if (
+                    document.body.scrollTop > 20 ||
+                    document.documentElement.scrollTop > 20
+                ) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+        </script>
+
         <script type="text/javascript" src="assets/js/custom.js"></script>
         <script type="text/javascript" src="assets/js/loader.js"></script>
         <script type="text/javascript" src="assets/js/jquery-3.6.0.slim.min.js"></script>
