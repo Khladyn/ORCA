@@ -90,7 +90,56 @@
         <div class="loader"></div>
 
         <div class="container-fluid px-lg-5 p-3 min-vh-100">
+            <div class="bg-body-tertiary rounded-4 shadow-sm">
+                <div class="orca-container-heading">
+                    <h6 class="fw-bold"><i class="fas fa-comment-lines"></i>&nbsp; Template Messages</h6>
+                </div>
 
+                <div class="px-lg-5 p-3 pb-5">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="my-2 field-req">
+                            <label> Opening Remarks: </label>
+                            <div id="opening_remarks_edit">
+                                <p>Welcome to ORCA: Office of the Registrar Chatbot Assistant. Please select a category for your query.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="my-2 field-req">
+                            <label> Closing Remarks: </label>
+                            <div id="closing_remarks_edit">
+                                <p>Thank you for using ORCA! We hope we were able to help you with your query.
+                                <br/><br/><b>CONTACT US:</b>
+                                    <p>Location: 2nd floor Main Bldg, University of Santo Tomas España, Manila C-1015</p>
+                                    <p>Telephone No.: (632) 8880-1611 Loc. 8216</p>
+                                    <p>E-mail Address: <a href="mailto:registrar.office@ust.edu.ph">registrar.office@ust.edu.ph</a></p>
+                                    <p>Website: <a href="https://registrar.ust.edu.ph">registrar.ust.edu.ph</a></p>
+                                    <p>Operation Hours: 8:00 am to 5:00 pm Monday to Friday</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="my-2 field-req">
+                            <label> Query Not Found in Q&A List: </label>
+                            <div id="query_not_found_edit">
+                                <p>Unfortunately, ORCA is unable to answer your query. For a more detailed answer, please contact the UST Office of the Registrar. 
+                                    <br/><br/><b>CONTACT US:</b>
+                                    <p>Location: 2nd floor Main Bldg, University of Santo Tomas España, Manila C-1015</p>
+                                    <p>Telephone No.: (632) 8880-1611 Loc. 8216</p>
+                                    <p>E-mail Address: <a href="mailto:registrar.office@ust.edu.ph">registrar.office@ust.edu.ph</a></p>
+                                    <p>Website: <a href="https://registrar.ust.edu.ph">registrar.ust.edu.ph</a></p>
+                                    <p>Operation Hours: 8:00 am to 5:00 pm Monday to Friday</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
         </div>
 
         <button class="btn btn-lg orca-btn-up rounded-pill fs-1 shadow-lg" id="back-to-top" type="button" title="Back To Top" style="display: none;">
@@ -124,9 +173,26 @@
         </footer>
         <!-- End of Footer -->
 
+        <script>
+            $(document).ready(function() {
+                const opening_remarks = new Quill('#opening_remarks_edit', {
+                    theme: 'snow',
+                });
+
+                const closing_remarks = new Quill('#closing_remarks_edit', {
+                    theme: 'snow'
+                });
+
+                const query_not_found = new Quill('#query_not_found_edit', {
+                    theme: 'snow'
+                });
+            });
+        </script>
+
         <script type="text/javascript" src="assets/js/custom.js"></script>
         <script type="text/javascript" src="assets/js/loader.js"></script>
         <script type="text/javascript" src="assets/js/jquery-3.6.0.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         
