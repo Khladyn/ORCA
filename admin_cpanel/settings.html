@@ -90,55 +90,117 @@
         <div class="loader"></div>
 
         <div class="container-fluid px-lg-5 p-3 min-vh-100">
-            <div class="bg-body-tertiary rounded-4 shadow-sm">
-                <div class="orca-container-heading">
-                    <h6 class="fw-bold"><i class="fas fa-comment-lines"></i>&nbsp; Template Messages</h6>
-                </div>
 
-                <div class="px-lg-5 p-3 pb-5">
+            <div class="row my-3">
+                <div class="col-xl-3 col-md-12 mb-4">
+                    <div class="bg-body-tertiary rounded-4 shadow-sm">
+                        <div class="orca-container-heading">
+                            <h6 class="fw-bold"><i class="fas fa-robot"></i>&nbsp; General</h6>
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="my-2 field-req">
-                            <label> Opening Remarks: </label>
-                            <div id="opening_remarks_edit">
-                                <p>Welcome to ORCA: Office of the Registrar Chatbot Assistant. Please select a category for your query.</p>
+                        <div class="px-3 pb-5">
+                            <div class="d-flex flex-column my-3 mx-3">  
+                                <div class="d-flex justify-content-between align-items-center"> 
+                                    <div class="my-2">
+                                        <h5>Chatbot maintenance</h5>
+                                    </div>
+                                    <div class="my-2">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" name="#" id="#" value="maintenance">
+                                        </div>
+                                    </div>
+                                </div>
+                                <small>The chatbot will be temporarily unavailable for maintenance.</small>
+                            </div>
+
+                            <hr>
+
+                            <div class="d-flex flex-column my-3 mx-3">  
+                                <div class="d-flex justify-content-between align-items-center"> 
+                                    <div class="my-2">
+                                        <h5>Enable/Disable Visibility</h5>
+                                    </div>
+                                    <div class="my-2">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" name="#" id="#" value="maintenance">
+                                        </div>
+                                    </div>
+                                </div>
+                                <small>The chatbot will be temporarily unavailable for maintenance.</small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="my-2 field-req">
-                            <label> Closing Remarks: </label>
-                            <div id="closing_remarks_edit">
-                                <p>Thank you for using ORCA! We hope we were able to help you with your query.
-                                <br/><br/><b>CONTACT US:</b>
-                                    <p>Location: 2nd floor Main Bldg, University of Santo Tomas España, Manila C-1015</p>
-                                    <p>Telephone No.: (632) 8880-1611 Loc. 8216</p>
-                                    <p>E-mail Address: <a href="mailto:registrar.office@ust.edu.ph">registrar.office@ust.edu.ph</a></p>
-                                    <p>Website: <a href="https://registrar.ust.edu.ph">registrar.ust.edu.ph</a></p>
-                                    <p>Operation Hours: 8:00 am to 5:00 pm Monday to Friday</p>
-                                </p>
-                            </div>
+
+                    <div class="bg-body-tertiary rounded-4 shadow-sm mt-3">
+                        <div class="orca-container-heading">
+                            <h6 class="fw-bold"><i class="fas fa-user-circle"></i>&nbsp; ORCA Avatar</h6>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="my-2 field-req">
-                            <label> Query Not Found in Q&A List: </label>
-                            <div id="query_not_found_edit">
-                                <p>Unfortunately, ORCA is unable to answer your query. For a more detailed answer, please contact the UST Office of the Registrar. 
-                                    <br/><br/><b>CONTACT US:</b>
-                                    <p>Location: 2nd floor Main Bldg, University of Santo Tomas España, Manila C-1015</p>
-                                    <p>Telephone No.: (632) 8880-1611 Loc. 8216</p>
-                                    <p>E-mail Address: <a href="mailto:registrar.office@ust.edu.ph">registrar.office@ust.edu.ph</a></p>
-                                    <p>Website: <a href="https://registrar.ust.edu.ph">registrar.ust.edu.ph</a></p>
-                                    <p>Operation Hours: 8:00 am to 5:00 pm Monday to Friday</p>
-                                </p>
-                            </div>
+
+                        <div class="px-3 pb-5">
+
                         </div>
                     </div>
                 </div>
 
+                <div class="col-xl-9 col-md-12">
+                    <div class="bg-body-tertiary rounded-4 shadow-sm">
+                        <div class="orca-container-heading">
+                            <h6 class="fw-bold"><i class="fas fa-comment-lines"></i>&nbsp; Message Templates</h6>
+                        </div>
+        
+                        <div class="px-lg-5 p-3 pb-5">
+        
+                        <div class="row mb-4">
+                            <div class="col-md-8">
+                                    <div id="msg_template_edit">
+                                        <p>Unfortunately, ORCA is unable to answer your query. For a more detailed answer, please contact the UST Office of the Registrar. 
+                                            <br/><br/><b>CONTACT US:</b>
+                                            <p>Location: 2nd floor Main Bldg, University of Santo Tomas España, Manila C-1015</p>
+                                            <p>Telephone No.: (632) 8880-1611 Loc. 8216</p>
+                                            <p>E-mail Address: <a href="mailto:registrar.office@ust.edu.ph">registrar.office@ust.edu.ph</a></p>
+                                            <p>Website: <a href="https://registrar.ust.edu.ph">registrar.ust.edu.ph</a></p>
+                                            <p>Operation Hours: 8:00 am to 5:00 pm Monday to Friday</p>
+                                        </p>
+                                    </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="pb-1 fw-bold"> TEMPLATE MENU </h6>
+                                <div class="list-group orca-list">
+                                    <a href="#" class="list-group-item list-group-item-action active" aria-current="page">Opening Remarks</a>
+                                    <a href="#" class="list-group-item list-group-item-action">Closing Remarks</a>
+                                    <a href="#" class="list-group-item list-group-item-action">Fallback Message</a>
+                                    <a href="#" class="list-group-item list-group-item-action">Error Message</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="bg-body-tertiary rounded-4 shadow-sm mt-5">
+                        <div class="orca-container-heading">
+                            <h6 class="fw-bold"><i class="fas fa-comment-lines"></i>&nbsp; Menu Management</h6>
+                        </div>
+        
+                        <div class="px-lg-5 p-3 pb-5">
+                            <div class="row mb-4">
+                                <div class="col-md-8">
+
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
                 </div>
+                    
+            </div>
+            
+            </div>
+
+            <div class="d-flex justify-content-end py-3 pb-5">
+                <button class="btn orca-btn-yellow rounded-5 fw-bold px-3 mx-1" type="submit"><i class="fas fa-save"></i> Save Changes</button>
             </div>
         </div>
 
@@ -175,15 +237,7 @@
 
         <script>
             $(document).ready(function() {
-                const opening_remarks = new Quill('#opening_remarks_edit', {
-                    theme: 'snow',
-                });
-
-                const closing_remarks = new Quill('#closing_remarks_edit', {
-                    theme: 'snow'
-                });
-
-                const query_not_found = new Quill('#query_not_found_edit', {
+                const msg_template = new Quill('#msg_template_edit', {
                     theme: 'snow'
                 });
             });

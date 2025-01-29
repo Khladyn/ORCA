@@ -380,6 +380,23 @@ table.dataTable thead > tr > th.sorting::before, table.dataTable thead > tr > th
 	color: #ffffff;
 }
 
+/* List Group */
+.orca-list {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.orca-list i {
+	color: #000000 !important;
+}
+
+.orca-list .active {
+	border-color: #f5bb00 !important;
+	background-color: #f5bb00 !important;
+	color: #000000 !important;
+	font-weight: 700;
+}
+
 /* Pagination */
 .page-item.active .page-link, .page-item.active:hover .page-link {
 	color: #000000 !important;
@@ -477,7 +494,7 @@ table.dataTable thead > tr > th.sorting::before, table.dataTable thead > tr > th
 	background-color: #ffcd28 !important;
 }
 
-/* Others */
+/* Quill */
 .ql-editor {
 	font-family: 'Montserrat', sans-serif;
 	min-height: 200px;
