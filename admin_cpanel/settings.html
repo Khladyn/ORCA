@@ -149,6 +149,10 @@
                         </div>
         
                         <div class="px-lg-5 p-3 pb-5">
+                            <!-- Action Buttons -->
+                            <div class="action-btn my-3 mb-4">
+                                <button class="btn btn-sm orca-btn-red fw-bold px-3" type="button" data-bs-toggle="modal" data-bs-target="#qnaBulkDel"><i class="fas fa-trash"></i> Bulk Delete </button>
+                            </div>
         
                         <div class="row mb-4">
                             <div class="col-md-8">
@@ -183,17 +187,70 @@
                         </div>
         
                         <div class="px-lg-5 p-3 pb-5">
-                            <div class="row mb-4">
-                                <div class="col-md-8">
+                            <small>Add menu actions to ORCA, and link them to your categories.</small>
+                            <!-- Table Proper -->
+                            <table class="table orca-table table-responsive table-striped text-break fluid-table my-3" id="orca-menu-table">
+                                <thead>
+                                    <tr class="text-nowrap">
+                                        <th><input class="form-check-input" type="checkbox" value="" name="" id=""></th>
+                                        <th>#</th>
+                                        <th width="30%">Menu Name</th>
+                                        <th width="30%">Category</th>
+                                        <th class="text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">1</td>
+                                        <td data-label="Menu Name"><input class="form-control form-control-sm rounded" type="text" placeholder="Enter menu name here" value="Miscellaneous" aria-label=""></td>
+                                        <td data-label="Category"><select class="form-select form-select-sm rounded" name="#" id="#" required>
+                                            <option value="" disabled>Select Category</option>
+                                            <option value="General">General</option>
+                                            <option value="Enrollment">Enrollment</option>
+                                            <option value="Petition Class">Petition Class</option>
+                                            <option value="Add/Drop Class">Add/Drop Class</option>
+                                            <option value="Graduation">Graduation</option>
+                                            <option value="Document Releasing">Document Releasing</option>
+                                            <option value="Alumni Verification">Alumni Verification</option>
+                                            <option value="OSRA">OSRA</option>
+                                            <option value="Miscellaneous" selected>Miscellaneous</option>
+                                        </select></td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Add" data-bs-toggle="modal" data-bs-target="#menuAdd"><i class="fas fa-plus fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Remove" data-bs-toggle="modal" data-bs-target="#menuDel"><i class="fas fa-minus fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Bulk Delete"><input class="form-check-input" type="checkbox" value="" name="" id=""></td>
+                                        <td data-label="#">2</td>
+                                        <td data-label="Menu Name"><input class="form-control form-control-sm rounded" type="text" placeholder="Enter menu name here" value="Alumni Concerns" aria-label=""></td>
+                                        <td data-label="Category"><select class="form-select form-select-sm rounded" name="#" id="#" required>
+                                            <option value="" disabled>Select Category</option>
+                                            <option value="General" selected>General</option>
+                                            <option value="Enrollment">Enrollment</option>
+                                            <option value="Petition Class">Petition Class</option>
+                                            <option value="Add/Drop Class">Add/Drop Class</option>
+                                            <option value="Graduation">Graduation</option>
+                                            <option value="Document Releasing">Document Releasing</option>
+                                            <option value="Alumni Verification" selected>Alumni Verification</option>
+                                            <option value="OSRA">OSRA</option>
+                                            <option value="Miscellaneous">Miscellaneous</option>
+                                        </select></td>
+                                        <td data-label="Action">
+                                            <div class="table-action-btn d-flex justify-content-end">
+                                                <button class="btn btn-sm orca-btn-yellow fw-bold me-1" type="button" title="Add" data-bs-toggle="modal" data-bs-target="#menuAdd"><i class="fas fa-plus fa-fw"></i></button>
+                                                <button class="btn btn-sm orca-btn-red fw-bold me-1" type="button" title="Remove" data-bs-toggle="modal" data-bs-target="#menuDel"><i class="fas fa-minus fa-fw"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-                                </div>
-                                <div class="col-md-4">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        
+</div>
+</div>                        
             </div>
             
             </div>
