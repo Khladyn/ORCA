@@ -141,7 +141,11 @@
                         <div class="p-3 pb-5">
                             <small>Change the avatar of your chatbot.</small>
                             <div class="text-center mt-3">
-                            <img src="assets/img/favicon-512x512.png" width="200" class="my-3 rounded-circle shadow-sm">
+                                <!-- Avatar -->
+                                <div class="orca-avatar mx-auto d-block mb-4">
+                                    <img src="assets/img/favicon-512x512.png" class="rounded-circle shadow" title="ORCA Avatar" width="250"/>
+                                    <button type="button" class="btn orca-btn-black" id="orca-change-avatar" title="Change Avatar" data-bs-toggle="modal" data-bs-target="#changeAvatar"><i class="fas fa-camera"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -301,6 +305,33 @@
         </footer>
         <!-- End of Footer -->
 
+        <!-- MODAL: Change Avatar -->
+        <div class="modal fade" id="changeAvatar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5 fw-bold" id="staticBackdropLabel"><i class="fas fa-camera"></i> Change Avatar </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form action="#" method="POST">
+                        <div class="modal-body"> 
+                            <div class="my-3">
+                                <img class="orca-avatar-upload rounded-circle shadow mx-auto d-block" src="assets/img/favicon-512x512.png" id="pic_preview" title="Profile Picture">
+                                <input class="upload_pic form-control mt-4" type="file" id="formFile" onchange="readURL(this)" accept="image/*">
+                                <small><i> (File format must be in .jpg or .png, file size must be below 5mb) </i></small>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-sm orca-btn-yellow fw-bold px-3 mx-1"><i class="fas fa-save"></i> Save Changes</button>
+                            <button type="button" class="btn btn-sm orca-btn-red fw-bold px-3 mx-1" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <script>
             $(document).ready(function() {
                 const msg_template = new Quill('#msg_template_edit', {
@@ -308,6 +339,29 @@
                 });
             });
         </script>
+
+<script>
+    const img = document.getElementById('pic_preview');
+    const changeProfModal = document.getElementById('changeAvatar')
+    
+    changeProfModal.addEventListener('hidden.bs.modal', event => {
+        img.setAttribute('src', 'assets/img/favicon-512x512.png');
+        $('.upload_pic').val('');
+    })
+
+    function readURL(el) {
+        if (el.files && el.files[0]) {
+            var FR= new FileReader();
+            FR.onload = function(e) {
+                $("#pic_preview").attr("src", e.target.result);
+                socket.emit('image', e.target.result);
+                console.log(e.target.result);
+            };       
+            FR.readAsDataURL( el.files[0] );
+        } 
+    };
+</script>
+        
 
         <script type="text/javascript" src="assets/js/custom.js"></script>
         <script type="text/javascript" src="assets/js/loader.js"></script>

@@ -225,6 +225,40 @@ input[type=checkbox]:checked, input[type=radio]:checked{
 	font-weight: bold;
 }
 
+/* Avatar */
+.orca-avatar {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	position: relative;
+}
+
+.orca-avatar img {
+	width: 250px;
+    height: 250px;
+	object-fit: cover;
+}
+
+.orca-avatar-upload {
+	width: 300px;
+    height: 300px;
+	object-fit: cover;
+}
+
+.orca-avatar button {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	border-radius: 50%;
+
+	height: 40px;
+	width: 40px;
+	display: flex !important;
+	
+	align-items: center;
+	justify-content: center;
+}
+
 /* Modal */
 
 .modal-content {
